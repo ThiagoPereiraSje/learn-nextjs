@@ -1,3 +1,5 @@
+import User from "../components/user";
+
 /* Fetch external data in build time and
  send inside the props for the page.  */
 export async function getStaticProps() {
@@ -23,8 +25,8 @@ export default function UserList({ users }) {
       {users.map((user) => {
         return (
           <div key={user.id}>
-            <p>{user.name}</p>
-            <p>{user.email}</p>
+            {/* Components cannot be created inside pages folder */}
+            <User user={user} />
           </div>
         );
       })}
