@@ -10,7 +10,11 @@ export async function getStaticProps() {
   // Send data inside the props
   return {
     props: {
-      posts: data.slice(0, 3),
+      // Fetch only 3 posts
+      // posts: data.slice(0, 3),
+
+      // Fetch 100 posts,
+      posts: data,
     },
   };
 }
