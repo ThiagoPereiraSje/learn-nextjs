@@ -14,7 +14,7 @@ export async function getStaticProps() {
       // posts: data.slice(0, 3),
 
       // Fetch 100 posts,
-      posts: data.slice(0, 3),
+      posts: data,
     },
   };
 }
