@@ -33,10 +33,21 @@ export async function getStaticPaths() {
   });
 
   return {
-    paths,
+    paths: paths.slice(0, 3),
     fallback: false,
   };
 }
+
+/* getStaticPaths fallback: false 
+  1 - The paths returned from getStaticPaths will be rendered to HTML at build 
+    time by getStaticProps.
+  2 - If fallback is set to false, then any paths not returned by 
+    getStaticProps will result in a 404 page.
+  
+  When to use ?
+    The false value is most suitable if you have an application with a small number of paths to prerender.
+    When new pages are not added often. Ex.: Blog.
+*/
 
 export async function getStaticProps(context) {
   const { params } = context;
